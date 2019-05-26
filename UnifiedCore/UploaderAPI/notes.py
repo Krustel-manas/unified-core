@@ -8,8 +8,7 @@ from UnifiedCore import db
 from UnifiedCore.models import Notes
 
 # Register this Page as a Blueprint
-notes = Blueprint('notes', __name__, subdomain='apiuploader',
-                  url_prefix='/notes')
+notes = Blueprint('notes', __name__,)
 
 
 @notes.route('/')

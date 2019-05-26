@@ -12,9 +12,8 @@ login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
 
 def create_app(config_class=Config):
-	app = Flask(__name__, subdomain_matching=True)
+	app = Flask(__name__)
 	app.config.from_object(Config)
-	app.url_map.default_subdomain = "app"
 	db.init_app(app)
 	bcrypt.init_app(app)
 	login_manager.init_app(app)
@@ -28,26 +27,26 @@ def create_app(config_class=Config):
 	from UnifiedCore.UploaderAPI.videos import videos
 	from UnifiedCore.UploaderAPI.samplepapers import samplepapers
 	#Register UploaderAPI Blueprints
-	app.register_blueprint(alerts)
-	app.register_blueprint(students)
-	app.register_blueprint(attendance)
-	app.register_blueprint(notes)
-	app.register_blueprint(results)
-	app.register_blueprint(videos)
-	app.register_blueprint(samplepapers)
+	app.register_blueprint(alerts, url_prefix='/upload/alerts')
+	app.register_blueprint(students, url_prefix='/upload/students')
+	app.register_blueprint(attendance, url_prefix='/upload/attendance')
+	app.register_blueprint(notes, url_prefix='/upload/notes')
+	app.register_blueprint(results, url_prefix='/upload/results')
+	app.register_blueprint(videos, url_prefix='/upload/videos')
+	app.register_blueprint(samplepapers, url_prefix='/upload/samplepapers')
 
 	#Load Main Routes
 	from UnifiedCore.Main.routes import main
 	#Register Main Routes
-	app.register_blueprint(main)
+	app.register_blueprint(main, url_prefix="/")
 
 	#Load AdminDashboard Routes
 	from UnifiedCore.AdminDashboard.routes import admindashboard
 	#Register AdminDashboard Routes
-	app.register_blueprint(admindashboard)
+	app.register_blueprint(admindashboard, url_prefix='/admindashboard')
 
 	#Load ForwardingAPI Routes
 	from UnifiedCore.ForwardingAPI.routes import forwardingAPI
 	#Register ForwardingAPI Routes
-	app.register_blueprint(forwardingAPI)
+	app.register_blueprint(forwardingAPI, url_prefix='/api')
 	return app

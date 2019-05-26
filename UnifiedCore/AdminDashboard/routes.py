@@ -6,8 +6,7 @@ from UnifiedCore.AdminDashboard.forms import (UploadVideoForm, UploadSampleQuest
 DispatchCircular, UploadNotes, UploadResults, UploadAttendance, UploadStudent)
 
 # Register this Page as a Blueprint
-admindashboard = Blueprint('admindashboard', __name__,
-				   subdomain='admin')
+admindashboard = Blueprint('admindashboard', __name__)
 
 @admindashboard.route("/home")
 def homepage():

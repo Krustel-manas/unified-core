@@ -8,8 +8,7 @@ from UnifiedCore import db
 from UnifiedCore.models import Notifications, Circulars
 
 # Register this Page as a Blueprint
-alerts = Blueprint('alerts', __name__,
-                   subdomain='apiuploader', url_prefix='/alerts')
+alerts = Blueprint('alerts', __name__)
 
 
 @alerts.route('/')

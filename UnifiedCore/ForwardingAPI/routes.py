@@ -7,8 +7,7 @@ from UnifiedCore.models import (
     Notifications, Circulars, Videos, SamplePapers, Notes, Results, Attendance, StudentInfo)
 
 # Register this Page as a Blueprint
-forwardingAPI = Blueprint('forwardingAPI', __name__,
-                          subdomain='api')
+forwardingAPI = Blueprint('forwardingAPI', __name__)
 
 
 @forwardingAPI.route('/')

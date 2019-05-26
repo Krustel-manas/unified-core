@@ -8,8 +8,7 @@ from UnifiedCore import db
 from UnifiedCore.models import Results
 
 # Register this Page as a Blueprint
-results = Blueprint('results', __name__,
-                    subdomain='apiuploader', url_prefix='/results')
+results = Blueprint('results', __name__)
 
 
 @results.route('/')

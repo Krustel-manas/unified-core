@@ -8,8 +8,7 @@ from UnifiedCore import db
 from UnifiedCore.models import StudentInfo
 
 # Register this Page as a Blueprint
-students = Blueprint('students', __name__,
-                     subdomain='apiuploader', url_prefix='/students')
+students = Blueprint('students', __name__,)
 
 @students.route('/')
 def alerthome():

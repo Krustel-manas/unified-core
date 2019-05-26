@@ -8,8 +8,7 @@ from UnifiedCore import db
 from UnifiedCore.models import Videos
 
 # Register this Page as a Blueprint
-videos = Blueprint('videos', __name__,
-				   subdomain='apiuploader', url_prefix='/videos')
+videos = Blueprint('videos', __name__)
 
 
 @videos.route('/')

@@ -4,8 +4,7 @@ from flask import (render_template,request, Blueprint,
 from flask import current_app
 
 # Register this Page as a Blueprint
-main = Blueprint('main', __name__,
-				   subdomain='admin')
+main = Blueprint('main', __name__)
 
 @main.route("/")
 def splashscreen():

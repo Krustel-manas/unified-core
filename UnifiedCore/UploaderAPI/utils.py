@@ -30,13 +30,13 @@ def extract_excel_data(provider_type, fileobject):
 				student_objects.append(student_object)
 
 			print("COMPLETED REQUEST")
-
 			return({
 				'data': student_objects,
 				'dcount': num_rows,
 				'status': 'OK'
 			})
 	except Exception as e:
+		print(e)
 		return({
 			'status': 'ERR',
 			'errcode': str(e)
@@ -47,6 +47,7 @@ def extract_excel_data(provider_type, fileobject):
 
 def upload_file_to_cloud(filebytes, filetype=None):
 	try:
+		start = time.time()
 		# Initialize Variables
 		objectURI = ""
 		if(filetype != None):
@@ -67,6 +68,8 @@ def upload_file_to_cloud(filebytes, filetype=None):
 									 )
 			objectURI = uploaded_object['secure_url']
 
+		end = time.time()
+		print(f"TOOK {int(end-start)} seconds to finish")
 		return({
 			"STATUS": "OK",
 			"URI": str(objectURI),
