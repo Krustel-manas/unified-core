@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}  
+
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/reminder.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/formcontrol.css')}}">
+<form action="{{url_for('alerts.create_circular')}}" method="post" enctype="multipart/form-data" class="frm">
+{{ form.hidden_tag()}}
+<div class="flexible">
+    <h2>Dispatch Circular</h2>
+    {{form.submit(class='sbutton')}} 
+</div>
+<div class="mainsection">
+    <h4>Circular Title</h4> 
+    {{ form.title(class="form-control", placeholder="Circular Title") }}
+    <br>
+    <h4>Circular File</h4>
+    {{ form.file() }}
+    <h4>Target Grade</h4>
+    {{ form.grade(class="form-control") }}
+    <br>
+    <h4>Circular Body</h4>
+    {{ form.message(class="form-control", rows="20", cols="10", placeholder="Circular Body") }}
+
+</div>
+</form>
+{% endblock content %}

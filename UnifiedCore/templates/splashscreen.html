@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Console</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/splashscreen.css')}}">
+    <script>
+        window.onload = function() {
+            setTimeout(()=> window.location = "{{url_for('admindashboard.homepage')}}", 5000);
+        }
+    </script>
+</head>
+<body>
+        <img src="{{url_for('static', filename='Images/logo.svg')}}" alt="" class="logo">
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block content %}  
+
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/notes.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/formcontrol.css')}}">
+<form action="{{url_for('notes.upload_notes')}}" method="post" enctype="multipart/form-data" class="frm">
+{{ form.hidden_tag()}}
+<div class="flexible">
+<h2>Upload Notes</h2>
+{{form.submit(class='sbutton')}} 
+</div>
+<div class="flexible">
+    <div class="part form-group">
+        <h4>Notes Name</h4>
+        {{ form.notes_name(class="form-control", placeholder="Notes Name") }}
+        <h4>Topic</h4>
+        {{ form.topic(class="form-control", placeholder="Topic") }}
+        <h4>Subject</h4>
+        {{ form.subject(class="form-control") }}
+        <h4>Grade</h4>
+        {{ form.grade(class="form-control") }}
+    </div>
+
+    <div class="part lpart form-group">
+        <h4>Notes File</h4>
+        {{ form.file() }}
+    </div>
+<div>
+</form>
+{% endblock content %}

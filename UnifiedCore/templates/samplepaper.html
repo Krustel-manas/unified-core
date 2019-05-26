@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}  
+
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/video.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/formcontrol.css')}}">
+<form action="{{url_for('samplepapers.upload_sample_paper')}}" method="post" enctype="multipart/form-data" class="frm">
+{{ form.hidden_tag()}}
+<div class="flexible">
+<h2>Upload Sample Question Paper</h2>
+{{form.submit(class='sbutton')}} 
+
+</div>
+<div class="flexible">
+    <div class="part form-group">
+        <h4>QuestionPaper Name</h4>
+        {{ form.paper_name(class="form-control", placeholder="Question Paper Name") }}
+        <h4>Subject</h4>
+        {{ form.subject(class="form-control") }}
+        <h4>Grade</h4>
+        {{ form.grade(class="form-control") }}
+    </div>
+
+    <div class="part lpart form-group">
+        <h4>Question Paper Year</h4>
+        {{ form.year(class="form-control", placeholder="QuestionPaper Year")}}
+        <br>
+        <h4>Question Paper File</h4>
+        {{ form.file() }}
+    </div>
+<div>
+</form>
+{% endblock content %}

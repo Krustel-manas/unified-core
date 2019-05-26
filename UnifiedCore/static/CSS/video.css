@@ -1,0 +1,24 @@
+.flexible{
+    display: flex;
+}
+
+.part{
+    float: left;
+}
+
+.lpart{
+    margin-left: 100px;
+}
+
+.frm{
+    margin-top: -35px;
+}
+
+.sbutton{
+    height: 50px;
+    margin: 25px;
+    width: 200px;
+    background-color: mediumseagreen;
+    color: white;
+    border: none;
+}

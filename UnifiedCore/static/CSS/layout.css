@@ -1,0 +1,140 @@
+html,
+body {
+  font-family: "Roboto", "Helvetica", sans-serif;
+}
+.demo-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 24px;
+}
+
+/* .demo-layout .mdl-layout__header .mdl-layout__drawer-button {
+  color: rgba(0, 0, 0, 0.54);
+} */
+
+
+.demo-drawer {
+  border: none;
+}
+
+/* iOS Safari specific workaround */ */
+/* .demo-drawer .mdl-menu__container {
+  z-index: -1;
+}
+.demo-drawer .demo-navigation {
+  z-index: -2;
+} */
+/* END iOS Safari specific workaround */
+
+.demo-drawer .mdl-menu .mdl-menu__item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.mdl-layout__drawer {
+  width: 320px;
+}
+
+.mdl-layout__drawer.is-visible {
+  left: 0;
+}
+
+.mainheader{
+  left: 80px;
+}
+
+.demo-drawer-header {
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 60px;
+  height: 228px;
+}
+
+.logo{
+  height: 140px;
+  width: 160px;
+  top:10px;
+}
+  
+/* .demo-navigation {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+} */
+.demo-layout .demo-navigation .mdl-navigation__link {
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.56);
+  font-weight: 500;
+}
+.demo-layout .demo-navigation .mdl-navigation__link:hover {
+  background-color: rgb(16, 16, 16);
+  color: white;
+}
+.demo-navigation .mdl-navigation__link .material-icons {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 1);
+  margin-right: 32px;
+}
+
+.mdl-layout__content {
+  left: 80px;
+  /* display: flex; */
+  align-items: center;
+  flex-direction: row;
+  padding: 50px;
+  background-color: rgb(28, 28, 28);
+  color: white;
+}
+
+.angle-seperator{
+  opacity: 0.3;
+  height: 10px;
+  margin: 0px 10px 0px 10px;
+}
+
+.x {
+  margin: 60px;
+}
+
+.schoolcolor {
+  background-color: rgb(22, 46, 77);
+}
+
+.dark {
+  background-color: rgb(16, 16, 16);
+}
+
+.logo_watermark{
+  position:fixed;
+  bottom:80px;
+  right:70px;
+  opacity:0.05;
+  z-index:0;
+  color:white;
+  transform: scale(1.6);
+ }
+
+ .mx-3{
+   margin-left: 10px;
+   margin-right: 10px;
+ }

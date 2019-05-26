@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}  
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/results.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/formcontrol.css')}}">
+<form action="{{url_for('attendance.upload_attendance')}}" method="post" enctype="multipart/form-data" class="frm">
+{{ form.hidden_tag()}}
+<h3></h3>
+<div class="flexible">
+<h2>Upload Attendance Data File </h2>
+{{form.submit(class='sbutton')}}
+</div>
+<div class="mainsection">
+    <h3>Academic Year</h3>
+    {{form.year(class='form-control', placeholder='Academic Year')}} 
+    <h3>Browse DataFile</h3>
+    {{form.file()}} 
+</div>
+</form>
+{% endblock content %}

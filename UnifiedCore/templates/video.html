@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block content %}  
+
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/video.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/formcontrol.css')}}">
+<form action="{{url_for('videos.upload_video')}}" method="post" enctype="multipart/form-data" class="frm">
+{{ form.hidden_tag()}}
+<div class="flexible">
+<h2>Upload Video</h2>
+{{form.submit(class='sbutton')}} 
+
+</div>
+<div class="flexible">
+    <div class="part form-group">
+        <h4>Video Name</h4>
+        {{ form.vid_name(class="form-control", placeholder="Video Name") }}
+        <h4>Topic</h4>
+        {{ form.topic(class="form-control", placeholder="Topic") }}
+        <h4>Subject</h4>
+        {{ form.subject(class="form-control") }}
+        <h4>Grade</h4>
+        {{ form.grade(class="form-control") }}
+    </div>
+    
+
+    <div class="part lpart form-group">
+        <h4>Description</h4>
+        {{ form.description(class="form-control", rows = "7", cols= "25", placeholder="Description")}}
+        <br>
+        <h4>Video File</h4>
+        {{ form.file() }}
+        <h4>Thumbnail</h4>
+        {{ form.thumbnail() }}
+    </div>
+<div>
+</form>
+{% endblock content %}

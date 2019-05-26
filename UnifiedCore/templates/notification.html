@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}  
+
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/notification.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='CSS/formcontrol.css')}}">
+<form action="{{url_for('alerts.create_notification')}}" method="post" enctype="multipart/form-data" class="frm">
+{{ form.hidden_tag()}}
+<div class="flexible">
+    <h2>Dispatch Notification</h2>
+    {{form.submit(class='sbutton')}} 
+</div>
+<div class="mainsection">
+    <h4>Notification Title</h4>
+    {{ form.title(class="form-control", placeholder="Notification Title") }}
+    <br>
+    <h4>Target Grade</h4>
+    {{ form.grade(class="form-control") }}
+    <br>
+    <h4>Notification Body</h4>
+    {{ form.message(class="form-control", rows="20", cols="10", placeholder="Notification Body") }}
+</div>
+</form>
+{% endblock content %}

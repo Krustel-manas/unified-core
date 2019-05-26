@@ -1,0 +1,21 @@
+.frm{
+    margin-top: -35px;
+}
+
+.mainsection{
+    padding: 20px;
+    width: 900px;
+}
+
+.sbutton{
+    height: 50px;
+    margin: 25px;
+    width: 200px;
+    background-color: mediumseagreen;
+    color: white;
+    border: none;
+}
+
+.flexible{
+    display: flex;
+}
